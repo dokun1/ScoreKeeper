@@ -9,34 +9,31 @@ import XCTest
 
 class ScoreKeeperUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+  override func setUpWithError() throws {
+    continueAfterFailure = false
+  }
+  
+  func testPlayerCreation() throws {
+    let app = XCUIApplication()
+    app.launch()
+    app.navigationBars["Game Scores"].buttons["plus"].tap()
+    app.textFields.element.tap()
+    app.textFields.element.typeText("Test Player")
+    app.buttons["Add"].tap()
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+    XCTAssert(app.tables.staticTexts["Test Player"].exists, "Should be able to find a new player named Test Player")
+  }
+  
+  func testPlayerScoreModification() throws {
+    let app = XCUIApplication()
+    app.launch()
+    app.navigationBars["Game Scores"].buttons["plus"].tap()
+    app.textFields.element.tap()
+    app.textFields.element.typeText("Test Player")
+    app.buttons["Add"].tap()
+    app.tables.cells["0, Test Player"].otherElements.containing(.staticText, identifier:"0").children(matching: .other).element.tap()
+    app.tables.cells["1, Test Player"].otherElements.containing(.staticText, identifier:"1").children(matching: .other).element.tap()
+    app.tables.cells["2, Test Player"].otherElements.containing(.staticText, identifier:"2").children(matching: .other).element.tap()
+    XCTAssert(app.tables.staticTexts["3"].exists, "Should have been able to modify the test player's score by 3")
+  }
 }

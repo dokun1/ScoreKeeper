@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5013B8A725211E3C0082F576 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8A625211E3C0082F576 /* NewPlayerView.swift */; };
+		5013B8AE252120DD0082F576 /* ScoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */; };
+		50B319CC252113800079832B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B319CB252113800079832B /* Player.swift */; };
+		50B319D1252113DB0079832B /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B319D0252113DB0079832B /* PlayerCell.swift */; };
 		50E49FAF2521101C006F70C7 /* ScoreKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E49FAE2521101C006F70C7 /* ScoreKeeperApp.swift */; };
-		50E49FB12521101C006F70C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E49FB02521101C006F70C7 /* ContentView.swift */; };
+		50E49FB12521101C006F70C7 /* ScoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E49FB02521101C006F70C7 /* ScoreList.swift */; };
 		50E49FB32521101E006F70C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E49FB22521101E006F70C7 /* Assets.xcassets */; };
 		50E49FB62521101E006F70C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E49FB52521101E006F70C7 /* Preview Assets.xcassets */; };
 		50E49FC12521101F006F70C7 /* ScoreKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E49FC02521101F006F70C7 /* ScoreKeeperTests.swift */; };
@@ -33,9 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5013B8A625211E3C0082F576 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
+		5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListViewModel.swift; sourceTree = "<group>"; };
+		50B319CB252113800079832B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		50B319D0252113DB0079832B /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		50E49FAB2521101C006F70C7 /* ScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E49FAE2521101C006F70C7 /* ScoreKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeeperApp.swift; sourceTree = "<group>"; };
-		50E49FB02521101C006F70C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		50E49FB02521101C006F70C7 /* ScoreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreList.swift; sourceTree = "<group>"; };
 		50E49FB22521101E006F70C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50E49FB52521101E006F70C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50E49FB72521101E006F70C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				50E49FAE2521101C006F70C7 /* ScoreKeeperApp.swift */,
-				50E49FB02521101C006F70C7 /* ContentView.swift */,
+				50E49FB02521101C006F70C7 /* ScoreList.swift */,
+				5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */,
+				50B319D0252113DB0079832B /* PlayerCell.swift */,
+				50B319CB252113800079832B /* Player.swift */,
+				5013B8A625211E3C0082F576 /* NewPlayerView.swift */,
 				50E49FB22521101E006F70C7 /* Assets.xcassets */,
 				50E49FB72521101E006F70C7 /* Info.plist */,
 				50E49FB42521101E006F70C7 /* Preview Content */,
@@ -259,7 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50E49FB12521101C006F70C7 /* ContentView.swift in Sources */,
+				50B319D1252113DB0079832B /* PlayerCell.swift in Sources */,
+				5013B8AE252120DD0082F576 /* ScoreListViewModel.swift in Sources */,
+				50E49FB12521101C006F70C7 /* ScoreList.swift in Sources */,
+				5013B8A725211E3C0082F576 /* NewPlayerView.swift in Sources */,
+				50B319CC252113800079832B /* Player.swift in Sources */,
 				50E49FAF2521101C006F70C7 /* ScoreKeeperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

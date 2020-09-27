@@ -11,7 +11,7 @@ import SwiftUI
 struct ScoreKeeperApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          ScoreList(viewModel: ScoreListViewModel())
         }
     }
 }

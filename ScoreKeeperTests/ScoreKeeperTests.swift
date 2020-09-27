@@ -9,25 +9,31 @@ import XCTest
 @testable import ScoreKeeper
 
 class ScoreKeeperTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+  func testNewPlayerCreation() throws {
+    let newPlayer = Player(name: "Test Player")
+    XCTAssertNotNil(newPlayer, "New player object should be created only with name")
+    XCTAssertEqual(newPlayer.score, 0, "New player should always have a score of zero")
+  }
+  
+  func testPlayerIdentifiersAreUnique() throws {
+    let newPlayer1 = Player(name: "Test Player")
+    let newPlayer2 = Player(name: "Test Player")
+    XCTAssertNotEqual(newPlayer1.id, newPlayer2.id, "All new player IDs should be unique")
+  }
+  
+  func testPlayerScoreUpdatedProperly() throws {
+    let newPlayer = Player(name: "Test Player")
+    XCTAssertEqual(newPlayer.score, 0, "New player should always have a score of zero")
+    newPlayer.updateScore(to: 4)
+    XCTAssertEqual(newPlayer.score, 4, "New player should have properly updated score")
+  }
+  
+  func testPlayerScoreReset() throws {
+    let newPlayer = Player(name: "Test Player")
+    XCTAssertEqual(newPlayer.score, 0, "New player should always have a score of zero")
+    newPlayer.updateScore(to: 4)
+    XCTAssertEqual(newPlayer.score, 4, "New player should have properly updated score")
+    newPlayer.resetScore()
+    XCTAssertEqual(newPlayer.score, 0, "New player should always have a score of zero after resetScore is called")
+  }  
 }

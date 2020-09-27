@@ -35,8 +35,8 @@ struct PlayerCell: View {
   }
 }
 
-//struct PlayerCell_Previews: PreviewProvider {
-//  static var previews: some View {
-//    PlayerCell(player: Player(name: "Candace"))
-//  }
-//}
+struct PlayerCell_Previews: PreviewProvider {
+  static var previews: some View {
+    PlayerCell(player: Player(name: "David"))
+  }
+}

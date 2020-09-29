@@ -33,7 +33,14 @@ jobs:
     name: Run Tests
     runs-on: macos-latest
     needs: build
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
+    - uses: act10ns/slack@v1
+      with:
+        status: starting
+        channel: '@sep30_ci_cd_github'
+      if: always()
     - uses: actions/checkout@master
     
     - name: Choose Xcode 12
@@ -41,3 +48,10 @@ jobs:
       
     - name: Run Tests
       run: xcodebuild -scheme "ScoreKeeper" -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=14.0' test
+      
+    - uses: act10ns/slack@v1
+      with:
+        status: ${{ job.status }}
+        steps: ${{ toJson(steps) }}
+        channel: '@sep30_ci_cd_github'
+      if: always()

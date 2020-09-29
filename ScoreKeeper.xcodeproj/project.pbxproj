@@ -10,6 +10,10 @@
 		5013B8A725211E3C0082F576 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8A625211E3C0082F576 /* NewPlayerView.swift */; };
 		5013B8AE252120DD0082F576 /* ScoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */; };
 		5013B8CB2521652D0082F576 /* pull-request.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5013B8C92521652D0082F576 /* pull-request.yml */; };
+		5043DBF825239B0E00F0394E /* decrypt-secrets.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5043DBF525239B0E00F0394E /* decrypt-secrets.sh */; };
+		5043DBF925239B0E00F0394E /* create-archive.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5043DBF625239B0E00F0394E /* create-archive.sh */; };
+		5043DBFA25239B0E00F0394E /* export-archive.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5043DBF725239B0E00F0394E /* export-archive.sh */; };
+		50725EAB2523A0CF0044A6CC /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50725EAA2523A0CF0044A6CC /* ExportOptions.plist */; };
 		50B319CC252113800079832B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B319CB252113800079832B /* Player.swift */; };
 		50B319D1252113DB0079832B /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B319D0252113DB0079832B /* PlayerCell.swift */; };
 		50E49FAF2521101C006F70C7 /* ScoreKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E49FAE2521101C006F70C7 /* ScoreKeeperApp.swift */; };
@@ -41,6 +45,10 @@
 		5013B8A625211E3C0082F576 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
 		5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListViewModel.swift; sourceTree = "<group>"; };
 		5013B8C92521652D0082F576 /* pull-request.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = "pull-request.yml"; path = ".github/workflows/pull-request.yml"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
+		5043DBF525239B0E00F0394E /* decrypt-secrets.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "decrypt-secrets.sh"; sourceTree = "<group>"; };
+		5043DBF625239B0E00F0394E /* create-archive.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "create-archive.sh"; sourceTree = "<group>"; };
+		5043DBF725239B0E00F0394E /* export-archive.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "export-archive.sh"; sourceTree = "<group>"; };
+		50725EAA2523A0CF0044A6CC /* ExportOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		50B319CB252113800079832B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		50B319D0252113DB0079832B /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		50E49FAB2521101C006F70C7 /* ScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,9 +98,21 @@
 			name = workflows;
 			sourceTree = "<group>";
 		};
+		5043DBF425239B0E00F0394E /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				5043DBF525239B0E00F0394E /* decrypt-secrets.sh */,
+				5043DBF625239B0E00F0394E /* create-archive.sh */,
+				5043DBF725239B0E00F0394E /* export-archive.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 		50E49FA22521101C006F70C7 = {
 			isa = PBXGroup;
 			children = (
+				50725EAA2523A0CF0044A6CC /* ExportOptions.plist */,
+				5043DBF425239B0E00F0394E /* scripts */,
 				5013B8C2252165000082F576 /* workflows */,
 				50E49FAD2521101C006F70C7 /* ScoreKeeper */,
 				50E49FBF2521101F006F70C7 /* ScoreKeeperTests */,
@@ -256,7 +276,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5043DBF825239B0E00F0394E /* decrypt-secrets.sh in Resources */,
+				5043DBFA25239B0E00F0394E /* export-archive.sh in Resources */,
+				50725EAB2523A0CF0044A6CC /* ExportOptions.plist in Resources */,
 				5013B8CB2521652D0082F576 /* pull-request.yml in Resources */,
+				5043DBF925239B0E00F0394E /* create-archive.sh in Resources */,
 				50E49FB62521101E006F70C7 /* Preview Assets.xcassets in Resources */,
 				50E49FB32521101E006F70C7 /* Assets.xcassets in Resources */,
 			);

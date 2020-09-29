@@ -60,4 +60,4 @@ security find-identity -p codesigning -v
 echo "========================================"
 echo "Available Provisioning Profiles:"
 
-ls ~/Library/MobileDevice/Provisioning\ Profiles/%
+ls ~/Library/MobileDevice/Provisioning\ Profiles/

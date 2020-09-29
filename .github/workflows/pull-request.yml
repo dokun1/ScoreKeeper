@@ -4,15 +4,6 @@ on:
   push:
 
 jobs:
-  hello_world:
-    name: Hello World!
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@master
-    
-    - name: Run Script
-      run: echo Hello, David!
-  
   lint:
     name: Swiftlint
     runs-on: macos-latest
@@ -23,6 +14,17 @@ jobs:
       run: |
         brew install swiftlint
         swiftlint autocorrect
+        
+  build:
+    name: Build
+    runs-on: macos-latest
+    needs: lint
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Build App
+      run: |
+        xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build
 #  ios_build:
 #    name: Build for iOS
 #    runs-on: macos-10.15

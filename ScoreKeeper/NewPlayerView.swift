@@ -25,7 +25,7 @@ struct NewPlayerView: View {
         Text("Add")
       })
       .padding()
-      .border(Color.blue, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+      .border(Color.blue, width: 1)
       .background(Color.blue)
       .foregroundColor(.white)
       .cornerRadius(10)

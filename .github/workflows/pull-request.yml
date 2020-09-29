@@ -26,36 +26,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
+    - name: Choose Xcode 12
+      run: sudo xcode-select --switch /Applications/Xcode_12.app
+      
     - name: Build App
-      run: |
-        xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build
-#  ios_build:
-#    name: Build for iOS
-#    runs-on: macos-10.15
-#    steps:
-#    - uses: actions/checkout@master
-#
-#    - name: Inject staging configuration
-#      run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET_STAGING}} ${{ secrets.MS_APP_CENTER_URL_SCHEME_STAGING }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }}
-#
-#    - name: Decrypt secrets
-#      run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
-#
-#    - name: Clean & Build App
-#      run: ./build-app-staging.sh
-#
-#  ios_test:
-#    runs-on: macos-10.15
-#    name: Test for iOS
-#    needs: ios_build
-#    steps:
-#      - uses: actions/checkout@master
-#
-#      - name: Inject staging configuration
-#        run: ./inject-staging.sh ${{ secrets.MS_APP_CENTER_SECRET_STAGING}} ${{ secrets.MS_APP_CENTER_URL_SCHEME_STAGING }} ${{ secrets.STAGING_ROOT_URL }} ${{ secrets.HTTPS_SCHEME }} ${{ secrets.STAGING_APP_NAME }} ${{ secrets.STAGING_APP_BUNDLE_ID }}
-#
-#      - name: Decrypt secrets
-#        run: ./decrypt-secrets.sh ${{ secrets.IOS_KEYS_SECRET }}
-#
-#      - name: Run iOS sim tests
-#        run: ./test-app-staging.sh
+      run: xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build

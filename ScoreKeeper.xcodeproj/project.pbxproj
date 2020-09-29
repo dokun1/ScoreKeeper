@@ -10,7 +10,6 @@
 		5013B8A725211E3C0082F576 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8A625211E3C0082F576 /* NewPlayerView.swift */; };
 		5013B8AE252120DD0082F576 /* ScoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */; };
 		5013B8CB2521652D0082F576 /* pull-request.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5013B8C92521652D0082F576 /* pull-request.yml */; };
-		5013B8CC2521652D0082F576 /* merge-to-main.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5013B8CA2521652D0082F576 /* merge-to-main.yml */; };
 		5092E1E72522DC4400A414F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E1E62522DC4400A414F1 /* AppDelegate.swift */; };
 		5092E1F22522DC6A00A414F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E1F12522DC6A00A414F1 /* SceneDelegate.swift */; };
 		50B319CC252113800079832B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B319CB252113800079832B /* Player.swift */; };
@@ -44,7 +43,6 @@
 		5013B8A625211E3C0082F576 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
 		5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListViewModel.swift; sourceTree = "<group>"; };
 		5013B8C92521652D0082F576 /* pull-request.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = "pull-request.yml"; path = ".github/workflows/pull-request.yml"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
-		5013B8CA2521652D0082F576 /* merge-to-main.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = "merge-to-main.yml"; path = ".github/workflows/merge-to-main.yml"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
 		5092E1E62522DC4400A414F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5092E1F12522DC6A00A414F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		50B319CB252113800079832B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		5013B8C2252165000082F576 /* workflows */ = {
 			isa = PBXGroup;
 			children = (
-				5013B8CA2521652D0082F576 /* merge-to-main.yml */,
 				5013B8C92521652D0082F576 /* pull-request.yml */,
 			);
 			name = workflows;
@@ -268,7 +265,6 @@
 				5013B8CB2521652D0082F576 /* pull-request.yml in Resources */,
 				50E49FB62521101E006F70C7 /* Preview Assets.xcassets in Resources */,
 				50E49FB32521101E006F70C7 /* Assets.xcassets in Resources */,
-				5013B8CC2521652D0082F576 /* merge-to-main.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

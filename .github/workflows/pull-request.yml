@@ -7,7 +7,14 @@ jobs:
   lint:
     name: Swiftlint
     runs-on: macos-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
+    - uses: act10ns/slack@v1
+      with:
+        status: starting
+      if: always()
+    
     - uses: actions/checkout@master
     
     - name: Install Swiftlint
@@ -15,12 +22,25 @@ jobs:
         
     - name: Run Swiftlint
       run: swiftlint autocorrect
+      
+    - uses: act10ns/slack@v1
+      with:
+        status: ${{ job.status }}
+        steps: ${{ toJson(steps) }}
+      if: always()
         
   build:
     name: Build
     runs-on: macos-latest
     needs: lint
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
+    - uses: act10ns/slack@v1
+      with:
+        status: starting
+      if: always()
+      
     - uses: actions/checkout@master
     
     - name: Choose Xcode 12
@@ -28,6 +48,12 @@ jobs:
       
     - name: Build App
       run: xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build
+      
+    - uses: act10ns/slack@v1
+      with:
+        status: ${{ job.status }}
+        steps: ${{ toJson(steps) }}
+      if: always()
       
   tests:
     name: Run Tests
@@ -39,7 +65,6 @@ jobs:
     - uses: act10ns/slack@v1
       with:
         status: starting
-        channel: '@sep30_ci_cd_github'
       if: always()
     - uses: actions/checkout@master
     
@@ -53,5 +78,4 @@ jobs:
       with:
         status: ${{ job.status }}
         steps: ${{ toJson(steps) }}
-        channel: '@sep30_ci_cd_github'
       if: always()

@@ -1,4 +1,4 @@
-name: Pull Request Testing
+name: Actions 101
 
 on:
   push:
@@ -9,9 +9,6 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@master
-    
-    - name: Show SDKs
-      run: xcodebuild -showsdks
     
     - name: Install Swiftlint
       run: brew install swiftlint
@@ -31,3 +28,13 @@ jobs:
       
     - name: Build App
       run: xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build
+      
+  tests:
+    name: Run Tests
+    runs-on: macos-latest
+    needs: build
+    steps:
+    - uses: actions/checkout@master
+      
+    - name: Run Tests
+      run: xcodebuild -scheme "ScoreKeeper" -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=14.0' test

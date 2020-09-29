@@ -12,6 +12,17 @@ jobs:
     
     - name: Run Script
       run: echo Hello, David!
+  
+  lint:
+    name: Swiftlint
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Install Swiftlint
+      run: |
+        brew install swiftlint
+        swiftlint autocorrect
 #  ios_build:
 #    name: Build for iOS
 #    runs-on: macos-10.15

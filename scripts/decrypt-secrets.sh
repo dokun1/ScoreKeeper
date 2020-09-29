@@ -38,7 +38,7 @@ security create-keychain -p "" build.keychain
 echo "========================================"
 echo "Importing certs into keychain..."
 
-security import ./.github/secrets/Certificate.p12 -t agg -k ~/Library/Keychains/build.keychain -P ${ENCRYPTION_KEY} -A
+security import ./ScoreKeeperCreds/Certs/Distribution/Certificate.p12 -t agg -k ~/Library/Keychains/build.keychain -P ${ENCRYPTION_KEY} -A
 
 echo "========================================"
 echo "Unlocking main keychain..."

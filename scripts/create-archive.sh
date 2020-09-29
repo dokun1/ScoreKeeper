@@ -7,4 +7,5 @@ xcodebuild -project ScoreKeeper.xcodeproj \
            -sdk iphoneos \
            -archivePath ./ScoreKeeper.xcarchive \
            -configuration "ScoreKeeper" \
+           -allowProvisioningUpdates \
            clean archive

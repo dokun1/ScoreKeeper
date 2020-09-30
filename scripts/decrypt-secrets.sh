@@ -14,7 +14,7 @@ echo "========================================"
 echo "Decrypting certs and profiles..."
 
 gpg --quiet --batch --yes --decrypt --passphrase="${ENCRYPTION_KEY}" --output ./ScoreKeeperCreds/Profiles/Development/ScoreKeeperDevelopmentProfile.mobileprovision ./ScoreKeeperCreds/Profiles/Development/ScoreKeeperDevelopmentProfile.mobileprovision.gpg
-gpg --quiet --batch --yes --decrypt --passphrase="${ENCRYPTION_KEY}" --output ./ScoreKeeperCreds/Profiles/Distribution/AdHocScoreKeeper.mobileprovision ./ScoreKeeperCreds/Profiles/Distribution/AdHocScoreKeeper.mobileprovision.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="${ENCRYPTION_KEY}" --output ./ScoreKeeperCreds/Profiles/Distribution/AdHocProfileScoreKeeper.mobileprovision ./ScoreKeeperCreds/Profiles/Distribution/AdHocProfileScoreKeeper.mobileprovision.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="${ENCRYPTION_KEY}" --output ./ScoreKeeperCreds/Profiles/Distribution/ScoreKeeperAppStoreProfile.mobileprovision ./ScoreKeeperCreds/Profiles/Distribution/ScoreKeeperAppStoreProfile.mobileprovision.gpg
 gpg --quiet --batch --yes --decrypt --passphrase="${ENCRYPTION_KEY}" --output ./ScoreKeeperCreds/Certs/Distribution/Certificate.p12 ./ScoreKeeperCreds/Certs/Distribution/Certificate.p12.gpg
 
@@ -27,7 +27,7 @@ echo "========================================"
 echo "Copying provisioning profile..."
 
 cp ./ScoreKeeperCreds/Profiles/Development/ScoreKeeperDevelopmentProfile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/ScoreKeeperDevelopmentProfile.mobileprovision
-cp ./ScoreKeeperCreds/Profiles/Distribution/AdHocScoreKeeper.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/AdHocScoreKeeper.mobileprovision
+cp ./ScoreKeeperCreds/Profiles/Distribution/AdHocProfileScoreKeeper.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/AdHocProfileScoreKeeper.mobileprovision
 cp ./ScoreKeeperCreds/Profiles/Distribution/ScoreKeeperAppStoreProfile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/ScoreKeeperAppStoreProfile.mobileprovision
 
 echo "========================================"

@@ -1,0 +1,14 @@
+name: Actions 101
+
+on:
+  push
+
+jobs:
+  hello_world:
+    name: Hello World!
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Run Script
+      run: echo Hello, try Swift!

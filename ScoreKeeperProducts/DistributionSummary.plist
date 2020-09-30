@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ScoreKeeper.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>6F912014DAD646B5BAA924787E792AF8AEE6E373</string>
+				<key>dateExpires</key>
+				<string>9/27/21</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>RQ632LL2X3.com.okun.ScoreKeeper</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>RQ632LL2X3</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>RQ632LL2X3.com.okun.ScoreKeeper</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>ScoreKeeper.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>de23cd42-b040-4ad1-9963-e71fed1e8b6e</string>
+				<key>name</key>
+				<string>AdHocScoreKeeper</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>RQ632LL2X3</string>
+				<key>name</key>
+				<string></string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

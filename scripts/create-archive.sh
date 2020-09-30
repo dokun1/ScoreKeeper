@@ -7,5 +7,12 @@ xcodebuild -project ScoreKeeper.xcodeproj \
            -sdk iphoneos \
            -archivePath ./ScoreKeeper.xcarchive \
            -configuration "ScoreKeeper" \
-           -allowProvisioningUpdates \
+           PROVISIONING_PROFILE="AdHocScoreKeeper" \
            clean archive
+
+#xcodebuild -project ScoreKeeper.xcodeproj \
+#           -scheme "ScoreKeeper" \
+#           -sdk iphoneos \
+#           -archivePath ./ScoreKeeper.xcarchive \
+#           -configuration "ScoreKeeper" \
+#           clean archive

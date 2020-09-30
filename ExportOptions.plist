@@ -5,7 +5,12 @@
 	<key>generateAppStoreInformation</key>
 	<false/>
 	<key>method</key>
-	<string>app-store</string>
+	<string>ad-hoc</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>com.okun.ScoreKeeper</key>
+		<string>AdHocScoreKeeper</string>
+	</dict>
 	<key>signingStyle</key>
 	<string>automatic</string>
 	<key>stripSwiftSymbols</key>

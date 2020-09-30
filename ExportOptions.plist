@@ -11,8 +11,10 @@
 		<key>com.okun.ScoreKeeper</key>
 		<string>AdHocScoreKeeper</string>
 	</dict>
+	<key>signingCertificate</key>
+	<string>6F912014DAD646B5BAA924787E792AF8AEE6E373</string>
 	<key>signingStyle</key>
-	<string>automatic</string>
+	<string>manual</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>

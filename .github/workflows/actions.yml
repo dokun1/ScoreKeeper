@@ -28,6 +28,7 @@ jobs:
     - uses: actions/checkout@master
     
     - name: Install Swiftlint
+      id: swiftlint
       run: |
         brew install swiftlint
         swiftlint autocorrect
@@ -35,7 +36,7 @@ jobs:
     - uses: act10ns/slack@v1
       with:
         status: ${{ job.status }}
-        steps: ${{ toJson(job.steps) }}
+        steps: ${{ toJson(steps) }}
       if: always()
           
   # this is the step to build my app

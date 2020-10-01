@@ -13,30 +13,30 @@ jobs:
     - name: Run Script
       run: echo Hello, try Swift!
 
-  jobs:
-    lint:
-      name: Swiftlint
-      runs-on: macos-latest
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      steps:
-      - uses: act10ns/slack@v1
-        with:
-          status: starting
-        if: always()
-        
-      - uses: actions/checkout@master
+
+  lint:
+    name: Swiftlint
+    runs-on: macos-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    steps:
+    - uses: act10ns/slack@v1
+      with:
+        status: starting
+      if: always()
       
-      - name: Install Swiftlint
-        run: |
-          brew install swiftlint
-          swiftlint autocorrect
-        
-      - uses: act10ns/slack@v1
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-        if: always()
+    - uses: actions/checkout@master
+    
+    - name: Install Swiftlint
+      run: |
+        brew install swiftlint
+        swiftlint autocorrect
+      
+    - uses: act10ns/slack@v1
+      with:
+        status: ${{ job.status }}
+        steps: ${{ toJson(steps) }}
+      if: always()
           
   # this is the step to build my app
   build:

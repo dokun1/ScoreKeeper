@@ -24,3 +24,16 @@ jobs:
           brew install swiftlint
           swiftlint autocorrect
           echo Linting done!
+  # this is the step to build my app
+  build:
+    name: Build My App
+    runs-on: macos-latest
+    needs: lint
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Choose Xcode 12
+      run: sudo xcode-select --switch /Applications/Xcode_12.app
+      
+    - name: Build App
+      run: xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build

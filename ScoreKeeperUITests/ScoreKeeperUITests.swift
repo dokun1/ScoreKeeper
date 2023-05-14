@@ -16,24 +16,24 @@ class ScoreKeeperUITests: XCTestCase {
   func testPlayerCreation() throws {
     let app = XCUIApplication()
     app.launch()
-    app.navigationBars["Game Scores"].buttons["plus"].tap()
+    app.buttons["addPlayerButton"].tap()
     app.textFields.element.tap()
     app.textFields.element.typeText("Test Player")
-    app.buttons["Add"].tap()
+    app.buttons["savePlayerButton"].tap()
 
-    XCTAssert(app.tables.staticTexts["Test Player"].exists, "Should be able to find a new player named Test Player")
+    XCTAssertTrue(app.staticTexts["Test Player"].exists, "Should be able to find a new player named Test Player")
   }
   
   func testPlayerScoreModification() throws {
     let app = XCUIApplication()
     app.launch()
-    app.navigationBars["Game Scores"].buttons["plus"].tap()
+    app.buttons["addPlayerButton"].tap()
     app.textFields.element.tap()
     app.textFields.element.typeText("Test Player")
-    app.buttons["Add"].tap()
-    app.tables.cells["0, Test Player"].otherElements.containing(.staticText, identifier:"0").children(matching: .other).element.tap()
-    app.tables.cells["1, Test Player"].otherElements.containing(.staticText, identifier:"1").children(matching: .other).element.tap()
-    app.tables.cells["2, Test Player"].otherElements.containing(.staticText, identifier:"2").children(matching: .other).element.tap()
-    XCTAssert(app.tables.staticTexts["3"].exists, "Should have been able to modify the test player's score by 3")
+    app.buttons["savePlayerButton"].tap()
+    app.steppers.firstMatch.buttons["Increment"].firstMatch.tap()
+    app.steppers.firstMatch.buttons["Increment"].firstMatch.tap()
+    app.steppers.firstMatch.buttons["Increment"].firstMatch.tap()
+    XCTAssertTrue(app.staticTexts["3"].exists, "Should have been able to modify the test player's score by 3")
   }
 }

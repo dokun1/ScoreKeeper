@@ -12,8 +12,8 @@ class Player: ObservableObject, Identifiable {
   var name: String
   @Published var score: Int
   
-  init(name: String) {
-    self.id = UUID()
+  init(id: UUID = UUID(), name: String) {
+    self.id = id
     self.score = 0
     self.name = name
   }

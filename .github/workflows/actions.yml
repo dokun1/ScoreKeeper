@@ -4,40 +4,16 @@ on:
   push
 
 jobs:
-  hello_world:
-    name: Hello World!
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@master
-    
-    - name: Run Script
-      run: echo Hello, try Swift!
-
-
   lint:
     name: Swiftlint
     runs-on: macos-latest
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
-    - uses: act10ns/slack@v1
-      with:
-        status: starting
-      if: always()
-      
     - uses: actions/checkout@master
     
     - name: Install Swiftlint
       id: swiftlint
       run: |
-        brew install swiftlint
-        swiftlint autocorrect
-      
-    - uses: act10ns/slack@v1
-      with:
-        status: ${{ job.status }}
-        steps: ${{ toJson(steps) }}
-      if: always()
+        swiftlint
           
   # this is the step to build my app
   build:
@@ -46,54 +22,26 @@ jobs:
     needs: lint
     steps:
     - uses: actions/checkout@master
-    
-    - name: Choose Xcode 12
-      run: sudo xcode-select --switch /Applications/Xcode_12.app
       
     - name: Build App
       run: xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build
 
-  tests:
-    name: Run Tests
+  unit_tests:
+    name: Run Unit Tests
     runs-on: macos-latest
     needs: build
     steps:
     - uses: actions/checkout@master
-    
-    - name: Choose Xcode 12
-      run: sudo xcode-select --switch /Applications/Xcode_12.app
       
     - name: Run Tests
-      run: xcodebuild -scheme "ScoreKeeper" -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=14.0' test
-      
-  archive:
-    name: Archive App
+      run: xcodebuild -scheme "ScoreKeeperTests" -destination 'platform=iOS Simulator,name=iPhone 14 Pro' test
+
+  ui_tests:
+    name: Run UI Tests
     runs-on: macos-latest
-    needs: tests
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    needs: build
     steps:
-    - uses: act10ns/slack@v1
-      with:
-        status: starting
-      if: always()
-      
     - uses: actions/checkout@master
-    
-    - name: Choose Xcode 12
-      run: sudo xcode-select --switch /Applications/Xcode_12.app
       
-    - name: Decrypt Secrets
-      run: ./scripts/decrypt-secrets.sh ${{ secrets.ENCRYPTION_KEY }} ${{ secrets.GH_ACCESS_TOKEN }}
-    
-    - name: Create Archive
-      run: ./scripts/create-archive.sh
-      
-    - name: Export Archive
-      run: ./scripts/export-archive.sh
-      
-    - uses: act10ns/slack@v1
-      with:
-        status: ${{ job.status }}
-        steps: ${{ toJson(steps) }}
-      if: always()
+    - name: Run Tests
+      run: xcodebuild -scheme "ScoreKeeperUITests" -destination 'platform=iOS Simulator,name=iPhone 14 Pro' test

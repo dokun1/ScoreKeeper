@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5013B8A725211E3C0082F576 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8A625211E3C0082F576 /* NewPlayerView.swift */; };
 		5013B8AE252120DD0082F576 /* ScoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */; };
 		5019BE7825253EFC00F0D676 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE7625253EFC00F0D676 /* .gitkeep */; };
-		5019BE7925253EFC00F0D676 /* actions.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE7725253EFC00F0D676 /* actions.yml */; };
 		5019BE8125253F0300F0D676 /* create-archive.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE7E25253F0300F0D676 /* create-archive.sh */; };
 		5019BE8225253F0300F0D676 /* export-archive.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE7F25253F0300F0D676 /* export-archive.sh */; };
 		5019BE8325253F0300F0D676 /* decrypt-secrets.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE8025253F0300F0D676 /* decrypt-secrets.sh */; };
@@ -18,6 +17,7 @@
 		5019BE8D2525401D00F0D676 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE8C2525401D00F0D676 /* .swiftlint.yml */; };
 		50B319CC252113800079832B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B319CB252113800079832B /* Player.swift */; };
 		50B319D1252113DB0079832B /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B319D0252113DB0079832B /* PlayerCell.swift */; };
+		50DA12102A1186B30036F44B /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA120F2A1186B30036F44B /* MainTextField.swift */; };
 		50E49FAF2521101C006F70C7 /* ScoreKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E49FAE2521101C006F70C7 /* ScoreKeeperApp.swift */; };
 		50E49FB12521101C006F70C7 /* ScoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E49FB02521101C006F70C7 /* ScoreList.swift */; };
 		50E49FB32521101E006F70C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E49FB22521101E006F70C7 /* Assets.xcassets */; };
@@ -47,7 +47,6 @@
 		5013B8A625211E3C0082F576 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
 		5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListViewModel.swift; sourceTree = "<group>"; };
 		5019BE7625253EFC00F0D676 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		5019BE7725253EFC00F0D676 /* actions.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = actions.yml; sourceTree = "<group>"; };
 		5019BE7E25253F0300F0D676 /* create-archive.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "create-archive.sh"; sourceTree = "<group>"; };
 		5019BE7F25253F0300F0D676 /* export-archive.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "export-archive.sh"; sourceTree = "<group>"; };
 		5019BE8025253F0300F0D676 /* decrypt-secrets.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "decrypt-secrets.sh"; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		5019BE8C2525401D00F0D676 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		50B319CB252113800079832B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		50B319D0252113DB0079832B /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		50DA120F2A1186B30036F44B /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
 		50E49FAB2521101C006F70C7 /* ScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E49FAE2521101C006F70C7 /* ScoreKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeeperApp.swift; sourceTree = "<group>"; };
 		50E49FB02521101C006F70C7 /* ScoreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreList.swift; sourceTree = "<group>"; };
@@ -98,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				5019BE7625253EFC00F0D676 /* .gitkeep */,
-				5019BE7725253EFC00F0D676 /* actions.yml */,
 			);
 			name = workflows;
 			path = .github/workflows;
@@ -147,6 +146,7 @@
 				50B319D0252113DB0079832B /* PlayerCell.swift */,
 				50B319CB252113800079832B /* Player.swift */,
 				5013B8A625211E3C0082F576 /* NewPlayerView.swift */,
+				50DA120F2A1186B30036F44B /* MainTextField.swift */,
 				50E49FB22521101E006F70C7 /* Assets.xcassets */,
 				50E49FB72521101E006F70C7 /* Info.plist */,
 				50E49FB42521101E006F70C7 /* Preview Content */,
@@ -242,8 +242,9 @@
 		50E49FA32521101C006F70C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					50E49FAA2521101C006F70C7 = {
 						CreatedOnToolsVersion = 12.0;
@@ -285,7 +286,6 @@
 			files = (
 				5019BE8D2525401D00F0D676 /* .swiftlint.yml in Resources */,
 				5019BE8325253F0300F0D676 /* decrypt-secrets.sh in Resources */,
-				5019BE7925253EFC00F0D676 /* actions.yml in Resources */,
 				5019BE8225253F0300F0D676 /* export-archive.sh in Resources */,
 				5019BE8825253F3100F0D676 /* ExportOptions.plist in Resources */,
 				5019BE7825253EFC00F0D676 /* .gitkeep in Resources */,
@@ -322,6 +322,7 @@
 				5013B8A725211E3C0082F576 /* NewPlayerView.swift in Sources */,
 				50B319CC252113800079832B /* Player.swift in Sources */,
 				50E49FAF2521101C006F70C7 /* ScoreKeeperApp.swift in Sources */,
+				50DA12102A1186B30036F44B /* MainTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +484,7 @@
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ScoreKeeper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,7 +506,7 @@
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ScoreKeeper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,7 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				INFOPLIST_FILE = ScoreKeeperTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,7 +548,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				INFOPLIST_FILE = ScoreKeeperTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,6 +569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				INFOPLIST_FILE = ScoreKeeperUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQ632LL2X3;
 				INFOPLIST_FILE = ScoreKeeperUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

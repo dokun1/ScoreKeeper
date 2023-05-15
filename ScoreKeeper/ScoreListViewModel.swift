@@ -11,4 +11,10 @@ import Combine
 
 final class ScoreListViewModel: ObservableObject {
   @Published var players = [Player]()
+  
+  func resetScores() {
+    for player in players {
+      player.resetScore()
+    }
+  }
 }

@@ -16,25 +16,34 @@ struct ScoreList: View {
   }
   
   var body: some View {
-    NavigationView {
+    NavigationStack {
       List {
         ForEach(viewModel.players) { player in
           PlayerCell(player: player)
         }
         .onDelete(perform: deletePlayer)
       }
-      .navigationBarItems(leading: Button(action: {
-        _ = viewModel.players.map { $0.resetScore() }
-      }, label: {
-        Image(systemName: "trash.circle")
-      }), trailing:
-        Button(action: {
-          isAddingPlayer = true
-        }, label: {
-          Image(systemName: "plus")
-        })
-      ).navigationBarTitle("Game Scores")
-    }.sheet(isPresented: $isAddingPlayer) {
+      .toolbar {
+        ToolbarItem(placement: .primaryAction) {
+          Button {
+            isAddingPlayer.toggle()
+          } label: {
+            Image(systemName: "plus")
+          }
+          .accessibilityIdentifier("addPlayerButton")
+        }
+        ToolbarItem(placement: .cancellationAction) {
+          Button {
+            viewModel.resetScores()
+          } label: {
+            Text("Reset")
+          }
+          .accessibilityIdentifier("resetScoreButton")
+        }
+      }
+      .navigationTitle("Game Scores")
+    }
+    .sheet(isPresented: $isAddingPlayer) {
       NewPlayerView(viewModel: viewModel, showingSheet: $isAddingPlayer)
     }
   }
@@ -45,5 +54,3 @@ struct ContentView_Previews: PreviewProvider {
     ScoreList()
   }
 }
-
-

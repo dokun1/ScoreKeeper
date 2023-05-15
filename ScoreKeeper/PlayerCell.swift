@@ -14,17 +14,17 @@ struct PlayerCell: View {
   
   var body: some View {
     HStack {
+      Text(player.name)
+        .font(.title)
+      Stepper(value: $player.score) {
+        Text("")
+      }
       Text("\(player.score)")
         .padding()
         .font(.title)
         .background(Color.blue)
         .cornerRadius(10.0)
         .foregroundColor(.white)
-      Text(player.name)
-        .font(.title)
-      Stepper(value: $player.score) {
-        Text("")
-      }
     }.padding()
   }
 }

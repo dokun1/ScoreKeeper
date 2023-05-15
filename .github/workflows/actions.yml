@@ -4,14 +4,17 @@ on:
   push
 
 jobs:
-  hello_world:
-    name: Hello World!
+  lint:
+    name: Swiftlint
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@master
     
-    - name: Run Script
-      run: echo Hello, try Swift!
+    - name: Install Swiftlint
+      id: swiftlint
+      run: |
+        brew install swiftlint
+        swiftlint autocorrect
           
   # this is the step to build my app
   build:
@@ -21,8 +24,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
-    - name: Choose Xcode 12
-      run: sudo xcode-select --switch /Applications/Xcode_12.app
+    - name: Choose Xcode 14
+      run: sudo xcode-select --switch /Applications/Xcode_14.app
       
     - name: Build App
       run: xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build
@@ -34,40 +37,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
-    - name: Choose Xcode 12
-      run: sudo xcode-select --switch /Applications/Xcode_12.app
+    - name: Choose Xcode 14
+      run: sudo xcode-select --switch /Applications/Xcode_14.app
       
     - name: Run Tests
-      run: xcodebuild -scheme "ScoreKeeper" -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=14.0' test
-      
-  archive:
-    name: Archive App
-    runs-on: macos-latest
-    needs: tests
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-    steps:
-    - uses: act10ns/slack@v1
-      with:
-        status: starting
-      if: always()
-      
-    - uses: actions/checkout@master
-    
-    - name: Choose Xcode 12
-      run: sudo xcode-select --switch /Applications/Xcode_12.app
-      
-    - name: Decrypt Secrets
-      run: ./scripts/decrypt-secrets.sh ${{ secrets.ENCRYPTION_KEY }} ${{ secrets.GH_ACCESS_TOKEN }}
-    
-    - name: Create Archive
-      run: ./scripts/create-archive.sh
-      
-    - name: Export Archive
-      run: ./scripts/export-archive.sh
-      
-    - uses: act10ns/slack@v1
-      with:
-        status: ${{ job.status }}
-        steps: ${{ toJson(steps) }}
-      if: always()
+      run: xcodebuild -scheme "ScoreKeeper" -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' test

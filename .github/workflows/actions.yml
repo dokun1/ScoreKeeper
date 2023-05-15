@@ -22,9 +22,6 @@ jobs:
     needs: lint
     steps:
     - uses: actions/checkout@master
-    
-    - name: Choose Xcode 14
-      run: sudo xcode-select --switch /Applications/Xcode_14.app
       
     - name: Build App
       run: xcodebuild -scheme "ScoreKeeper" -target ScoreKeeper -sdk iphonesimulator clean build
@@ -35,9 +32,6 @@ jobs:
     needs: build
     steps:
     - uses: actions/checkout@master
-    
-    - name: Choose Xcode 14
-      run: sudo xcode-select --switch /Applications/Xcode_14.app
       
     - name: Run Tests
       run: xcodebuild -scheme "ScoreKeeper" -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' test

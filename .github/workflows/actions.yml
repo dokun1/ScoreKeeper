@@ -13,7 +13,7 @@ jobs:
     - name: Install Swiftlint
       id: swiftlint
       run: |
-        brew install swiftlint
+        # brew install swiftlint
         swiftlint autocorrect
           
   # this is the step to build my app

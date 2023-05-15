@@ -10,7 +10,6 @@
 		5013B8A725211E3C0082F576 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8A625211E3C0082F576 /* NewPlayerView.swift */; };
 		5013B8AE252120DD0082F576 /* ScoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */; };
 		5019BE7825253EFC00F0D676 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE7625253EFC00F0D676 /* .gitkeep */; };
-		5019BE7925253EFC00F0D676 /* actions.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE7725253EFC00F0D676 /* actions.yml */; };
 		5019BE8125253F0300F0D676 /* create-archive.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE7E25253F0300F0D676 /* create-archive.sh */; };
 		5019BE8225253F0300F0D676 /* export-archive.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE7F25253F0300F0D676 /* export-archive.sh */; };
 		5019BE8325253F0300F0D676 /* decrypt-secrets.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5019BE8025253F0300F0D676 /* decrypt-secrets.sh */; };
@@ -48,7 +47,6 @@
 		5013B8A625211E3C0082F576 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
 		5013B8AD252120DD0082F576 /* ScoreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListViewModel.swift; sourceTree = "<group>"; };
 		5019BE7625253EFC00F0D676 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		5019BE7725253EFC00F0D676 /* actions.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = actions.yml; sourceTree = "<group>"; };
 		5019BE7E25253F0300F0D676 /* create-archive.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "create-archive.sh"; sourceTree = "<group>"; };
 		5019BE7F25253F0300F0D676 /* export-archive.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "export-archive.sh"; sourceTree = "<group>"; };
 		5019BE8025253F0300F0D676 /* decrypt-secrets.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "decrypt-secrets.sh"; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				5019BE7625253EFC00F0D676 /* .gitkeep */,
-				5019BE7725253EFC00F0D676 /* actions.yml */,
 			);
 			name = workflows;
 			path = .github/workflows;
@@ -289,7 +286,6 @@
 			files = (
 				5019BE8D2525401D00F0D676 /* .swiftlint.yml in Resources */,
 				5019BE8325253F0300F0D676 /* decrypt-secrets.sh in Resources */,
-				5019BE7925253EFC00F0D676 /* actions.yml in Resources */,
 				5019BE8225253F0300F0D676 /* export-archive.sh in Resources */,
 				5019BE8825253F3100F0D676 /* ExportOptions.plist in Resources */,
 				5019BE7825253EFC00F0D676 /* .gitkeep in Resources */,
